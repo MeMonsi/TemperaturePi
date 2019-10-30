@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "grpc.tss";
+option java_outer_classname = "TemperatureSensorServiceProto";
+option objc_class_prefix = "TSS";
+
+package temperatureSensorService;
+
+service TemperatureSensorService {
+  // Sends a greeting
+  rpc GetTemperature (TemperatureRequest) returns (TemperatureReply) {}
+}
+
+// The request, containing the sensor id.
+message TemperatureRequest {
+  int32 sensorId = 1;
+}
+
+// The response message containing the greetings
+message TemperatureReply {
+  float temperature = 1;
+}
